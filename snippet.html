@@ -1,0 +1,122 @@
+<div id="section-circular" class="uk-section uk-section-default uk-section-large"  uk-scrollspy="cls: uk-animation-fade; repeat: true">
+
+	<div class="uk-container">
+	
+		<div class="uk-margin uk-text-center">
+			<h4>Kreislauf</h4>
+		</div>
+		
+		<div class="uk-margin uk-text-center" uk-scrollspy="cls: uk-animation-fade; repeat: true">
+			<h1>So einfach funktioniert IT-Remarketing mit CircularTronics</h1>
+		</div>
+		
+		<div class="uk-margin uk-margin-large" uk-scrollspy="cls: uk-animation-fade; repeat: true">
+			<div class="graphic-container">
+				<div class="graphic-item item1 uk-border-rounded"><h3 class="step-number">1.</h3>Professionelle Beratung und Bestandsaufnahme</div>
+				<div class="graphic-item item2 uk-border-rounded"><img id="spinning-image" src="assets/img/circle.svg"></div>
+				<div class="graphic-item item3 uk-border-rounded"><h3 class="step-number">2.</h3> Sichere Abholung deutschlandweit</div>
+				<div class="graphic-item item4 uk-border-rounded"><h3 class="step-number">3.</h3> Zertifizierte und DSGVO-konforme Datenlöschung</div>
+				<div class="graphic-item item5 uk-border-rounded"><h3 class="step-number">4.</h3> Vergütung werthaltiger IT-Hardware und umweltgerechte Entsorgung</div>
+			</div>
+		</div>
+		
+	</div><!--/.uk-container-->
+
+</div><!--/.uk-section-->
+
+<style>
+
+	.graphic-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 40px;
+		width: 100%;
+	}
+
+	.graphic-item {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: #2bac70;
+		background-color: #ffffff;
+		color: #333333;
+		padding: 20px;
+		text-align: center;
+		border: 0px solid #ddd;
+		font-size: 18px;
+	}
+
+	.item2 {
+		grid-row: span 2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #fff;
+		border: none;
+	}
+	
+	#spinning-image {
+		transition: transform 0.1s ease-out;
+	}
+	
+	h3.step-number {
+		color:  #2bac70;
+		font-size: 20px;
+		font-weight: 400 !important;
+		border: 1px solid #2bac70;
+		height: 60px;
+		width: 60px;
+		line-height: 60px;
+		border-radius: 100px;
+	}
+
+	@media (max-width: 768px) {
+		.graphic-container {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			gap: 20px;
+		}
+
+		.item2 {
+			grid-row: auto;
+			order: 1;
+		}
+
+		.item1 {
+			order: 2;
+		}
+
+		.item3 {
+			order: 3;
+		}
+
+		.item4 {
+			order: 4;
+		}
+
+		.item5 {
+			order: 5;
+		}
+		
+		#spinning-image {
+			max-width: 200px;
+		}
+		
+	}
+</style>
+
+<script>
+
+	function handleScroll() {
+		const image = document.getElementById('spinning-image');
+		const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		const rotation = scrollTop / 5; 
+
+		image.style.transform = `rotate(${rotation}deg)`;
+	}
+
+	window.addEventListener('scroll', handleScroll);
+	
+</script>
